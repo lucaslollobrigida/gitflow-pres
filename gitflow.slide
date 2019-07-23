@@ -1,15 +1,96 @@
 Gitflow
-Lorem Ipsum.
+Melhorando a entrega de código com boas práticas.
 15:04 22 Jul 2019
 Tags: git, gitflow, code versioning
 
 Lucas Lollobrigida
-Software Engineer, Goomer
+Desenvolvedor Backend, Goomer
 lucaslollobrigida@gmail.com
 https://github.com/lucaslollobrigida/
 @llollobrigida_
-Open Source, Coffe and Go.
+git commit -m "the end."
 
 * Vamos ao inicio...
 
 .image git-logo.png 350 800
+
+* Linus Torvalds
+
+.image talk-is-cheap.png
+
+* Conceitos básicos
+
+.code basic.sh
+
+* Por que complicar um fluxo simples? Afinal...
+
+* Se eu commitei, é porque funciona
+
+.image works-locally.jpeg 460 604
+
+* Workflow
+
+.image workflow.png
+
+* Branchs principais
+
+*Develop*:
+
+- ambiente de desenvolvimento
+- centralizar o trabalho do time até a release ficar pronta
+- é atualizada com novas features
+
+*Master*:
+
+- ambiente de produçāo
+- foco em *estabilidade*
+- é atualizada com novas releases
+
+* Algumas regras
+
+* Feature Branch
+
+  git checkout -b feature/new-awesome-feature
+
+- Sempre nascem da develop
+- Sempre sāo incorpordas na develop
+
+* Bug-fix Branch
+
+  git checkout -b fix/remove-yesterday-bug
+
+- Bug-fix branchs sempre nascem da master
+- Bug-fix branchs sempre sāo incorporadas na master e develop
+
+* Release Branch
+
+  git checkout -b release/2.1.2
+  git tag v2.1.2
+
+- Release branchs sempre nascem da develop
+- Feature branchs sempre sāo incorpordas na master
+
+* Agora ficou fácil, nāo tem como dar errado
+
+* Conflitos
+
+.image git-merge.webp 480 840
+
+* Merge vs Rebase
+
+Merge:
+
+- Com merge mudamos apenas o conteúdo da branch de destino
+- Resoluçāo de conflitos local mais difícil
+- Adiciona commits desnecessários
+
+Rebase:
+
+- Movemos a base da branch fonte para o final da branch de destino
+- Temos uma linha cronologica mais clara
+
+* Resumo
+
+* Na prática
+
+.code feature_cicle.sh
